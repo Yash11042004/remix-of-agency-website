@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design System for RAUM
+   Colors:
+   - Black: #0E0E0E (HSL: 0 0% 5.5%)
+   - Background: #EAEAEA (HSL: 0 0% 91.8%)
+   - Light Grey: #AFAFAF (HSL: 0 0% 68.6%)
+   
+   Typography:
+   - Headlines (h1-h3): Inter Semibold (600)
+   - Bold text: Inter Bold (700)
+   - Normal paragraphs: Inter Medium (500)
+*/
+
+@layer base {
+  :root,
+  .theme-neutral {
+    /* Core brand colors - Neutral (#EAEAEA background) */
+    --background: 0 0% 91.8%;
+    --foreground: 0 0% 5.5%;
+    --muted: 0 0% 68.6%;
+    --muted-foreground: 0 0% 45%;
+    
+    /* Accent colors for dark UI elements (command menu, forms) */
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+    --accent-muted: 0 0% 40%;
+    --accent-border: 0 0% 16%;
+    --accent-hover: 0 0% 10%;
+
+    /* Secondary - slightly darker than background */
+    --secondary: 0 0% 86%;
+    --secondary-foreground: 0 0% 5.5%;
+
+    /* Card and popover */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5.5%;
+    --popover: 0 0% 5.5%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Primary button/action colors */
+    --primary: 0 0% 5.5%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Form elements */
+    --border: 0 0% 68.6%;
+    --input: 0 0% 68.6%;
+    --ring: 0 0% 5.5%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar (not used but keeping for shadcn compatibility) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 26%;
+    --sidebar-primary: 0 0% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 91%;
+    --sidebar-ring: 0 0% 60%;
+  }
+
+  /* High Contrast Theme - maximum readability */
+  .theme-contrast {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 25%;
+    
+    --accent: 0 0% 0%;
+    --accent-foreground: 0 0% 100%;
+    --accent-muted: 0 0% 30%;
+    --accent-border: 0 0% 0%;
+    --accent-hover: 0 0% 15%;
+
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    --border: 0 0% 0%;
+    --input: 0 0% 70%;
+    --ring: 0 0% 0%;
+
+    --destructive: 0 100% 40%;
+    --destructive-foreground: 0 0% 100%;
+  }
+
+  /* Pink Theme - #E2A4A7 (dark) / #FFF8F6 (light) */
+  .theme-pink {
+    --background: 5 40% 99%;
+    --foreground: 1 39% 50%;
+    --muted: 1 35% 76%;
+    --muted-foreground: 1 35% 62%;
+    
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+    --accent-muted: 0 0% 40%;
+    --accent-border: 0 0% 16%;
+    --accent-hover: 0 0% 10%;
+
+    --secondary: 5 40% 94%;
+    --secondary-foreground: 1 39% 50%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 1 39% 50%;
+    --popover: 0 0% 5.5%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 1 39% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --border: 1 35% 76%;
+    --input: 1 35% 76%;
+    --ring: 1 39% 50%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+  }
+
+  /* Green Theme - #99AC96 (dark) / #FDFFFC (light) */
+  .theme-green {
+    --background: 108 20% 99%;
+    --foreground: 110 11% 42%;
+    --muted: 110 11% 64%;
+    --muted-foreground: 110 11% 52%;
+    
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+    --accent-muted: 0 0% 40%;
+    --accent-border: 0 0% 16%;
+    --accent-hover: 0 0% 10%;
+
+    --secondary: 108 20% 95%;
+    --secondary-foreground: 110 11% 42%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 110 11% 42%;
+    --popover: 0 0% 5.5%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 110 11% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --border: 110 11% 64%;
+    --input: 110 11% 64%;
+    --ring: 110 11% 42%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+  }
+
+  /* Yellow Theme - #DABE97 (dark) / #FFF7EC (light) */
+  .theme-yellow {
+    --background: 37 50% 99%;
+    --foreground: 36 42% 45%;
+    --muted: 36 42% 72%;
+    --muted-foreground: 36 42% 58%;
+    
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+    --accent-muted: 0 0% 40%;
+    --accent-border: 0 0% 16%;
+    --accent-hover: 0 0% 10%;
+
+    --secondary: 37 50% 92%;
+    --secondary-foreground: 36 42% 45%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 36 42% 45%;
+    --popover: 0 0% 5.5%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 36 42% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --border: 36 42% 72%;
+    --input: 36 42% 72%;
+    --ring: 36 42% 45%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 0 0% 5.5%;
+    --foreground: 0 0% 91.8%;
+    --muted: 0 0% 40%;
+    --muted-foreground: 0 0% 68.6%;
+
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+    --accent-muted: 0 0% 40%;
+    --accent-border: 0 0% 16%;
+    --accent-hover: 0 0% 10%;
+
+    --secondary: 0 0% 17%;
+    --secondary-foreground: 0 0% 91.8%;
+
+    --card: 0 0% 5.5%;
+    --card-foreground: 0 0% 91.8%;
+    --popover: 0 0% 5.5%;
+    --popover-foreground: 0 0% 91.8%;
+
+    --primary: 0 0% 91.8%;
+    --primary-foreground: 0 0% 5.5%;
+
+    --border: 0 0% 17%;
+    --input: 0 0% 17%;
+    --ring: 0 0% 84%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 91.8%;
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 0 0% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 16%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 0 0% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Typography defaults */
+  h1, h2, h3 {
+    @apply font-semibold;
+  }
+}
